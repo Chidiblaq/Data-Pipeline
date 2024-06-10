@@ -2,11 +2,12 @@ version: 2
 
 sources:
   - name: tpch
+    description: a clone of snowflake sample data
     database: snowflake_sample_data
     schema: tpch_sf1
     tables:
       - name: orders
-        description: one unique order per role and must not contain an empty value
+        description: raw orders table. one unique order per role and must not contain an empty value
         columns:
           - name: o_orderkey
             description: primary key
@@ -14,7 +15,7 @@ sources:
               - unique
               - not_null
       - name: lineitem
-        description: This references the order table
+        description: raw line-item. This references the order table
         columns:
           - name: l_orderkey
             tests:
