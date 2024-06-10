@@ -9,4 +9,4 @@ One of the following values:
 
 *Note: The definition above is not accurate and it is just for demostration purposes.
 
-{% end %}
+{% enddocs %}
