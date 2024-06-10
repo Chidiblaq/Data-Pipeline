@@ -6,12 +6,15 @@ sources:
     schema: tpch_sf1
     tables:
       - name: orders
+        description: one unique order per role and must not contain an empty value
         columns:
           - name: o_orderkey
+            description: primary key
             tests:
               - unique
               - not_null
       - name: lineitem
+        description: This references the order table
         columns:
           - name: l_orderkey
             tests:

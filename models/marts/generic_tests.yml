@@ -1,7 +1,9 @@
 models:
   - name: fct_orders
+    description: one order per role
     columns:
       - name: order_key
+        description: primary key and references the orders staging model
         tests:
           - unique
           - not_null
@@ -10,6 +12,7 @@ models:
               field: order_key
               severity: warn
       - name: status_code
+        description: "{{ doc('status_code') }}"
         tests:
           - accepted_values:
               values: ['P', 'O', 'F']
